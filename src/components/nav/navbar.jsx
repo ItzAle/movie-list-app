@@ -9,9 +9,9 @@ function Navbar() {
       <section>
         <nav>
            <img className={style.logo} src={logo} alt="logo" />
-          <h2> inicio</h2>
-          <h2>favoritos</h2>
-          <input type="text"  placeholder='buscar'/>
+          <h2>INICIO</h2>
+          <h2>FAVORITOS</h2>
+          <input type="text"  placeholder='Buscar...'/>
         </nav>
         </section>
     </div>

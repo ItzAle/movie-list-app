@@ -1,4 +1,5 @@
 body {
+  transition: 0.6s ease;
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,5 +17,10 @@ code {
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,700;0,900;1,400;1,600;1,700&display=swap');
 
 :root{
-  --fuente: "Source Sans Pro"
+  --fuente: "Source Sans Pro";
+}
+
+:root{
+  --color1: #F13A00;
+  --color2: #121323;
 }

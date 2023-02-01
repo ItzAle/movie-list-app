@@ -4,18 +4,47 @@ nav {
     justify-content: space-around;
     flex-wrap: nowrap;
     flex-direction: row;
-    background-color: #121323 ;
-    color:#F13A00;
-    
-
+    background-color: var(--color2) ;
+    color:var(--color1);
 }
 input {
     max-width: 100px;
-    background-color: #ffffff79;
+    background-color: var(--color2);
     border-style: groove;
     border-radius: 20px;
     
 }
 .logo {
     max-width: 100px;
+    cursor: pointer;
+}
+
+h2{
+    cursor: pointer;
+    font-family: var(--fuente);
+    font-weight: 500;
+    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+}
+
+h2::after{
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color1);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+h2:hover::after{
+    cursor: pointer;
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
