@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background-color: #121323 ;
+    color:#F13A00;
+    
+
+}
+input {
+    max-width: 100px;
+    background-color: #ffffff79;
+    border-style: groove;
+    border-radius: 20px;
+    
+}
+.logo {
+    max-width: 100px;
+}
