@@ -1,0 +1,9 @@
+.card {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+    padding: 20px;
+    background-color: var(--color2);
+    color: var(--color1);
+}
