@@ -20,7 +20,7 @@ function Catalogue() {
     <div className={style.card}>
       <div className={style.img}>
         {pelis.map((peli) => (
-          <img src={peli.movieURL} alt="img" />
+          <img className={style.imgContent} src={peli.movieURL} alt="img" />
         ))}
       </div>
     </div>
