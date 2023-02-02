@@ -1,6 +1,10 @@
 * {
   font-family: var(--fuente);
 }
+.movieDetail {
+  padding: 30px;
+}
+
 .poster {
   height: 200px;
 }
@@ -21,27 +25,38 @@ span {
   align-items: center;
 }
 .thumbnail {
-  max-width: 100%;
+  width: 700px;
   height: 400px;
 }
 
 .poster {
   max-width: 100%;
-  height: 375px;
-}
-
-.infoDiv {
-  display: flex;
-  gap: 20px;
+  height: 400px;
 }
 
 .title {
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  gap: 6px;
+  list-style: none;
+}
+
+.name {
+  color: var(--color1);
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .actorDiv {
   display: flex;
-  gap: 20px;
+  justify-content: center;
+  gap: 30px;
+  align-items: stretch;
   max-width: 100%;
   height: 200px;
 }
