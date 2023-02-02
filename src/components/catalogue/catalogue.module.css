@@ -1,9 +1,13 @@
-.card {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    gap: 15px;
-    padding: 20px;
-    background-color: var(--color2);
-    color: var(--color1);
+.img img {
+  height: 320px;
+  width: 250px;
+  transition: all 0.3s ease;
+}
+
+.img {
+  list-style: none;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
 }
