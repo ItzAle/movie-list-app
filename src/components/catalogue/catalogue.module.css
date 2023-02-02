@@ -12,11 +12,10 @@
   gap: 25px;
 }
 
-.imgContent:hover{
-    cursor: pointer;
-    opacity: 70%;
-    filter: saturate(100%);
-    filter: brightness(50%);
-    filter: hue-rotate(5deg);
-
+.imgContent:hover {
+  cursor: pointer;
+  opacity: 70%;
+  filter: saturate(100%);
+  filter: brightness(50%);
+  filter: hue-rotate(5deg);
 }

@@ -8,7 +8,7 @@ const productServices = {
       .then((res) => res.json())
       .then((data) => data);
   },
-  getById() {
+  getById(id) {
     return axios.get(apiBase + `/${id}`).then((res) => res.data);
   },
 };
