@@ -18,11 +18,9 @@ function Catalogue() {
   return (
     <div className={style.card}>
       <div className={style.img}>
-        <Link to={"/movie1"}>
-          {pelis.map((peli) => (
-            <img className={style.imgContent} src={peli.movieURL} alt="img" />
-          ))}
-        </Link>
+        {pelis.map((peli) => (
+          <img className={style.imgContent} src={peli.movieURL} alt="img" />
+        ))}
       </div>
     </div>
   );

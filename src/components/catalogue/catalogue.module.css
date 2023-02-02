@@ -9,12 +9,13 @@
   color: white;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 60px;
+  padding: 40px;
 }
 
 .imgContent:hover {
   cursor: pointer;
-  opacity: 70%;
+  opacity: 60%;
   filter: saturate(100%);
   filter: brightness(50%);
   filter: hue-rotate(5deg);
