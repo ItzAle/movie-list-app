@@ -12,10 +12,14 @@ function Navbar() {
           <Link to={"/"}>
             <img className={style.logo} src={logo} alt="logo" />
           </Link>
-          <Link to={"/"}>
-            <h2>INICIO</h2>
-          </Link>
-          <h2>FAVORITOS</h2>
+          <div className={style.nav}>
+            <Link to={"/"}>
+              <h2>INICIO</h2>
+            </Link>
+            <Link to={"/favorites"}>
+              <h2>FAVORITOS</h2>
+            </Link>
+          </div>
           <input type="text" placeholder="Buscar..." />
         </nav>
       </section>

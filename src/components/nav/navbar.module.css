@@ -1,3 +1,4 @@
+.nav,
 nav {
   display: flex;
   align-items: center;
@@ -6,6 +7,7 @@ nav {
   flex-direction: row;
   background-color: var(--color2);
   color: var(--color1);
+  gap: 50px;
 }
 
 input::placeholder {
@@ -21,9 +23,9 @@ input {
   transition: all 0.4s ease;
 }
 
-input:hover {
+/* input:hover {
   opacity: 76%;
-}
+} */
 .logo {
   display: block;
   max-width: 100%;
@@ -59,4 +61,10 @@ h2:hover::after {
   cursor: pointer;
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@media (max-width: 976px) {
+  .nav {
+    display: none;
+  }
 }

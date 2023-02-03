@@ -5,6 +5,7 @@ import Movies from "./Pages/Movies/Movies";
 import { Route, Routes } from "react-router-dom";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 import Error from "./Pages/404/error";
+import Favorites from "./Pages/Favorites/favorites";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Movies />} />
         <Route path="/movie/:id/" element={<MovieDetails />} />
         <Route path="/*" element={<Error />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </div>
   );
