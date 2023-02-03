@@ -21,3 +21,14 @@
   filter: brightness(50%);
   filter: hue-rotate(5deg);
 }
+
+@media (max-width: 976px) {
+  .img {
+    list-style: none;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-around;
+  }
+}
