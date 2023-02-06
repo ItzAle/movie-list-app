@@ -22,11 +22,20 @@ function MovieDetails() {
         <li>{pelis.movieTime}h</li>
       </ul>
       <div className={style.actorDiv}>
-        <img className={style.actorImagen} src={pelis.actor1URL} alt="" />
-        <img className={style.actorImagen} src={pelis.actor2URL} alt="" />
-        <img className={style.actorImagen} src={pelis.actor3URL} alt="" />
-        <img className={style.actorImagen} src={pelis.actor4URL} alt="" />
-        <img className={style.actorImagen} src={pelis.actor5URL} alt="" />
+        {[
+          pelis.actor1URL,
+          pelis.actor2URL,
+          pelis.actor3URL,
+          pelis.actor4URL,
+          pelis.actor5URL,
+        ].map((actorURL, index) => (
+          <img
+            key={index}
+            className={style.actorImagen}
+            src={actorURL}
+            alt="Actor"
+          />
+        ))}
       </div>
     </div>
   );
