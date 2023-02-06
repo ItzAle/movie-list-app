@@ -32,3 +32,25 @@
     justify-content: space-around;
   }
 }
+
+button {
+  color: rgb(255, 251, 251);
+  background-color: transparent;
+  border-radius: 0cm;
+  padding: 0px;
+  box-sizing: 0px;
+  justify-content: center;
+  border-color: transparent;
+
+}
+.button_card{
+  display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ justify-content: baseline;
+
+}
+.delete:hover{
+  color: var(--color1);
+  
+}
