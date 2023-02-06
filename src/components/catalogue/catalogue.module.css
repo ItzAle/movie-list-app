@@ -10,6 +10,7 @@
   color: white;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 60px;
   padding: 60px;
 }
