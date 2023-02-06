@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
-  padding: 40px;
+  padding: 60px;
 }
 
 .imgContent:hover {
@@ -20,6 +20,16 @@
   filter: saturate(100%);
   filter: brightness(50%);
   filter: hue-rotate(5deg);
+}
+
+.button_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: baseline;
+}
+.delete:hover {
+  color: var(--color1);
 }
 
 @media (max-width: 976px) {
@@ -41,16 +51,4 @@ button {
   box-sizing: 0px;
   justify-content: center;
   border-color: transparent;
-
-}
-.button_card{
-  display: flex;
- flex-direction: column;
- align-items: flex-end;
- justify-content: baseline;
-
-}
-.delete:hover{
-  color: var(--color1);
-  
 }

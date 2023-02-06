@@ -3,6 +3,7 @@ import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
 import { CiTrash } from "react-icons/ci";
+import Movies from "../Movies/Movies";
 
 // const pelisData = [
 //   { id: 1, name: "peli1", img: "algo.jpg" },
@@ -25,16 +26,13 @@ function Catalogue() {
 
   return (
     <div className={style.card}>
-      <div className={style.img}>
-        {pelis.map((peli) => (
-          <div className={style.button_card}>
-          <Link to={`movie/${peli.id}`}>
-            <img className={style.imgContent} src={peli.movieURL} alt="img"  />
-          </Link>
-          <CiTrash className={style.delete} onClick={() => deleteById(peli.id)}/>
-          </div>
-        ))}
-      </div>
+      <Movies
+        style={style}
+        pelis={pelis}
+        Link={Link}
+        CiTrash={CiTrash}
+        deleteById={deleteById}
+      />
     </div>
   );
 }
