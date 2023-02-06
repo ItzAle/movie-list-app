@@ -11,6 +11,12 @@ const productServices = {
   getById(id) {
     return axios.get(apiBase + `/${id}`).then((res) => res.data);
   },
+  deleteById(id) {
+    return axios
+      .delete(apiBase + `/${id}`)
+      .then((res) => res.data)
+      .catch((err) => console.log(err));
+  },
 };
 
 export default productServices;
