@@ -26,13 +26,13 @@ function Catalogue() {
   return (
     <div className={style.card}>
       <div className={style.img}>
-        <button onClick={() => deleteById(pelis.id)}>
-          <CiTrash />
-        </button>
         {pelis.map((peli) => (
+           <button onClick={() => deleteById(peli.id)}>
+           <CiTrash />
           <Link to={`movie/${peli.id}`}>
             <img className={style.imgContent} src={peli.movieURL} alt="img"  />
           </Link>
+          </button>
         ))}
       </div>
     </div>
