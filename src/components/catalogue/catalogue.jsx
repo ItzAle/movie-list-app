@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
-import { CiTrash } from "react-icons/ci";
+import { CiTrash, CiStar } from "react-icons/ci";
 import Movies from "../Movies/Movies";
 
 // const pelisData = [
@@ -32,6 +32,7 @@ function Catalogue() {
         Link={Link}
         CiTrash={CiTrash}
         deleteById={deleteById}
+        CiStar={CiStar}
       />
     </div>
   );
