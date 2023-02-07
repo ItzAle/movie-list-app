@@ -13,6 +13,7 @@ import Movies from "../Movies/Movies";
 
 function Catalogue() {
   const [pelis, setPelis] = useState([]);
+  const [isFav, setIsFav] = useState([]);
 
   useEffect(() => {
     productServices.getAll().then((data) => setPelis(data));
@@ -24,16 +25,41 @@ function Catalogue() {
     setPelis(newPelis);
   };
 
+  const addToFavorite = (peli) => {
+    if (!isFav.includes(peli)) setIsFav(isFav.concat(peli));
+    console.log(peli);
+  };
+
+  const removeFavorite = (id) => {
+    let index = isFav.indexOf(id);
+    console.log(index);
+    let temp = [...isFav.slice(0, index), ...isFav.slice(index + 1)];
+    setIsFav(temp);
+  };
   return (
     <div className={style.card}>
-      <Movies
+      {/* <Movies
         style={style}
         pelis={pelis}
         Link={Link}
         CiTrash={CiTrash}
         deleteById={deleteById}
         CiStar={CiStar}
-      />
+      /> */}
+      <div className={style.img}>
+        {pelis.map((peli) => (
+          <div className={style.button_card}>
+            <Link to={`movie/${peli.id}`}>
+              <img className={style.imgContent} src={peli.movieURL} alt="img" />
+            </Link>
+            <CiTrash
+              className={style.delete}
+              onClick={() => deleteById(peli.id)}
+            />
+            <CiStar onClick={() => addToFavorite(peli.isFav)} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 import Error from "./Pages/404/error";
 import Favorites from "./Pages/Favorites/favorites";
+import Mobile from "./components/Mobile/Mobile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/*" element={<Error />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
+      <Mobile />
     </div>
   );
 }
