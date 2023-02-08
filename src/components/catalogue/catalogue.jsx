@@ -25,9 +25,8 @@ function Catalogue() {
     setPelis(newPelis);
   };
 
-  const addToFavorite = (peli) => {
-    if (!isFav.includes(peli)) setIsFav(isFav.concat(peli));
-    console.log(peli);
+  const addToFavorite = () => {
+    productServices.addToFavorite(isFav);
   };
 
   const removeFavorite = (id) => {
@@ -56,7 +55,7 @@ function Catalogue() {
               className={style.delete}
               onClick={() => deleteById(peli.id)}
             />
-            <CiStar onClick={() => addToFavorite(peli.isFav)} />
+            <CiStar onClick={() => addToFavorite()} />
           </div>
         ))}
       </div>

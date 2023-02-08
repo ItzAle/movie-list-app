@@ -7,6 +7,7 @@ import MovieDetails from "./Pages/MovieDetails/MovieDetails";
 import Error from "./Pages/404/error";
 import Favorites from "./Pages/Favorites/favorites";
 import Mobile from "./components/Mobile/Mobile";
+import FormPage from "./Pages/FormPage/FormPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="favorites/movie/:id/" element={<MovieDetails />} />
         <Route path="/*" element={<Error />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/newmovie" element={<FormPage />} />
       </Routes>
       <Mobile />
     </div>
