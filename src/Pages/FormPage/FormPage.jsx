@@ -18,7 +18,7 @@ const initMovie = {
   actor3URL: "",
   actor4: "Actor4",
   actor4URL: "",
-  actor5: "Actor4",
+  actor5: "Actor5",
   actor5URL: "",
   thumbnail: "",
   sinopsis: "Sinopsis...",
@@ -48,6 +48,7 @@ const FormPage = () => {
         </div>
         <section className={style.inputSection}>
           <input
+            className={style.input}
             value={newMovie.movieName}
             onChange={handleOnChange}
             name="movieName"
@@ -69,6 +70,7 @@ const FormPage = () => {
             placeholder="URL del poster"
           ></textarea>
           <input
+            className={style.input}
             value={newMovie.Director}
             onChange={handleOnChange}
             name="Director"
@@ -76,6 +78,7 @@ const FormPage = () => {
             placeholder="Director"
           />
           <input
+            className={style.input}
             value={newMovie.movieYear}
             onChange={handleOnChange}
             name="movieYear"
@@ -83,6 +86,7 @@ const FormPage = () => {
             placeholder="Año de la pelicula"
           />
           <input
+            className={style.input}
             value={newMovie.movieTime}
             onChange={handleOnChange}
             name="movieTime"
@@ -90,6 +94,7 @@ const FormPage = () => {
             placeholder="Tiempo de la pelicula"
           />
           <input
+            className={style.input}
             value={newMovie.actor1}
             onChange={handleOnChange}
             name="actor1"
@@ -100,9 +105,10 @@ const FormPage = () => {
             onChange={handleOnChange}
             value={newMovie.actor1URL}
             name="actor1URL"
-            placeholder="URL del Actor"
+            placeholder="URL Foto actor 1"
           ></textarea>
           <input
+            className={style.input}
             value={newMovie.actor2}
             onChange={handleOnChange}
             name="actor2"
@@ -113,9 +119,10 @@ const FormPage = () => {
             onChange={handleOnChange}
             value={newMovie.actor2URL}
             name="actor2URL"
-            placeholder="URL del Actor"
+            placeholder="URL Foto Actor 2"
           ></textarea>
           <input
+            className={style.input}
             value={newMovie.actor3}
             onChange={handleOnChange}
             name="actor3"
@@ -124,11 +131,12 @@ const FormPage = () => {
           />
           <textarea
             onChange={handleOnChange}
-            value={newMovie.actor1URL}
+            value={newMovie.actor3URL}
             name="actor3URL"
-            placeholder="URL del Actor"
+            placeholder="URL del Actor 3"
           ></textarea>
           <input
+            className={style.input}
             value={newMovie.actor4}
             onChange={handleOnChange}
             name="actor4"
@@ -139,9 +147,10 @@ const FormPage = () => {
             onChange={handleOnChange}
             value={newMovie.actor4URL}
             name="actor4URL"
-            placeholder="URL del Actor"
+            placeholder="URL del Actor 4 "
           ></textarea>
           <input
+            className={style.input}
             value={newMovie.actor5}
             onChange={handleOnChange}
             name="actor5"
@@ -152,7 +161,7 @@ const FormPage = () => {
             onChange={handleOnChange}
             value={newMovie.actor5URL}
             name="actor5URL"
-            placeholder="URL del Actor"
+            placeholder="URL del Actor 5 "
           ></textarea>
           <textarea
             onChange={handleOnChange}

@@ -1,6 +1,6 @@
 .container {
   background-color: var(--color2);
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
   padding: 1rem;
 }
@@ -8,10 +8,34 @@
 .imageContainer {
   background-color: white;
   margin: auto;
-  width: 20rem;
-  height: 20rem;
+  width: 250px;
+  height: 320px;
 }
 
+.input {
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  max-width: 100%;
+  width: 250px;
+  height: 40px;
+}
+.input::placeholder {
+  text-align: center;
+  color: grey;
+}
+
+textarea {
+  width: 250px;
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: var(--color2);
+  color: white;
+}
+textarea::placeholder {
+  color: grey;
+}
 .imageContainer img {
   margin: auto;
   background-color: white;
@@ -21,7 +45,60 @@
 }
 
 .inputSection {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem;
   gap: 1rem;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 976px) {
+  .container {
+    background-color: var(--color2);
+    max-width: 90%;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .imageContainer {
+    background-color: white;
+    margin: auto;
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .input {
+    border-radius: 10px;
+    text-align: center;
+    max-width: 100rem;
+    color: white;
+  }
+  .input::placeholder {
+    text-align: center;
+    color: white;
+  }
+
+  textarea {
+    border-radius: 10px;
+    text-align: center;
+    background-color: var(--color2);
+    color: white;
+  }
+  textarea::placeholder {
+    color: white;
+  }
+  .imageContainer img {
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+
+  .inputSection {
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+  }
 }

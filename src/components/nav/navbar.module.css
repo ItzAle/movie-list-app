@@ -1,7 +1,7 @@
 .nav,
 nav {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-evenly;
   flex-wrap: nowrap;
   flex-direction: row;
