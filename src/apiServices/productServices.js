@@ -23,6 +23,12 @@ const productServices = {
       .then((res) => res.data)
       .catch((err) => console.log(err));
   },
+  create(data) {
+    return axios
+      .post(apiBase, data)
+      .then((res) => res.data)
+      .catch((err) => console.log(err));
+  },
 };
 
 export default productServices;

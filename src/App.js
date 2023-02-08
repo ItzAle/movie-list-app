@@ -20,6 +20,7 @@ function App() {
         <Route path="/*" element={<Error />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/newmovie" element={<FormPage />} />
+        <Route path="movie/edit/:id" element={<FormPage />} />
       </Routes>
       <Mobile />
     </div>
