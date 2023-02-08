@@ -98,6 +98,7 @@ textarea::placeholder {
 
   .inputSection {
     display: grid;
+    justify-content: space-around;
     padding: 1rem;
     gap: 1rem;
   }
