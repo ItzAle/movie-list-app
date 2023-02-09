@@ -19,31 +19,26 @@ function Catalogue() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    productServices.getAll().then((data) => {
-      setPelis(data);
-      setIsLoading(false);
-    });
+    getAlldata();
+    setIsLoading(false);
   }, []);
 
+  function getAlldata() {
+    productServices.getAll().then((data) => setPelis(data));
+  }
   const deleteById = async (idToDelete) => {
     await productServices.deleteById(idToDelete);
     let newPelis = pelis.filter((item) => item.id !== idToDelete);
     setPelis(newPelis);
   };
 
-  const addToFavorite = (id) => {
-    console.log(id);
-    axios.put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + id, {
-      isFav: true,
-    });
-  };
-
-  const removeFavorite = (id) => {
-    let index = isFav.indexOf(id);
-    console.log(id);
-    axios.put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + id, {
-      isFav: false,
-    });
+  const toogleToFavorite = (peli) => {
+    console.log(peli);
+    axios
+      .put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + peli.id, {
+        isFav: !peli.isFav,
+      })
+      .then((x) => getAlldata());
   };
 
   return (
@@ -67,8 +62,14 @@ function Catalogue() {
               className={style.delete}
               onClick={() => deleteById(peli.id)}
             />
-            <CiStar onClick={() => addToFavorite(peli.id)} />
-            <CiCircleRemove onClick={() => removeFavorite(peli.id)} />
+            {!peli.isFav ? (
+              <CiStar
+                className={style.add}
+                onClick={() => toogleToFavorite(peli)}
+              />
+            ) : (
+              <CiCircleRemove onClick={() => toogleToFavorite(peli)} />
+            )}
           </div>
         ))}
       </div>
