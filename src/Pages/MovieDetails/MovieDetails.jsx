@@ -34,10 +34,11 @@ function MovieDetails() {
             <li>Año {pelis.movieYear}</li>
             <li>{pelis.movieTime} Min.</li>
           </ul>
-          <div className={style.actorDiv}>
-            {pelis.actores.map((actor, index) => (
-              <ActorCard index={index} actor={actor} />
-            ))}
+          <div className={style.Sinopsis}>
+            <h1 className={style.Sinopsis_title}>Sinopsis: </h1>
+            <h1>{pelis.Sinopsis}</h1>
+            <div className={ActorCard}></div>
+            <ActorCard />
           </div>
         </div>
       )}

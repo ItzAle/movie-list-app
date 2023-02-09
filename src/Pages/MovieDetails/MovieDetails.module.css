@@ -1,5 +1,6 @@
 * {
   font-family: var(--fuente);
+  list-style: none;
 }
 .movieDetail {
   padding: 30px;
@@ -25,47 +26,40 @@ span {
   align-items: center;
 }
 .thumbnail {
+  border-radius: 10px;
   width: 700px;
   height: 400px;
 }
 
 .poster {
+  border-radius: 10px;
   max-width: 100%;
   height: 400px;
 }
 
-.title {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  flex-wrap: nowrap;
-  justify-content: center;
-  color: white;
-  font-weight: 500;
-  gap: 6px;
-  list-style: none;
-}
-
 .name {
+  list-style: none;
   color: var(--color1);
   font-size: 30px;
   font-weight: 600;
 }
-
-.actorDiv {
+.title {
   display: flex;
-  justify-content: space-evenly;
-  align-content: space-around;
-  align-items: flex-end;
-  gap: 83px;
-  align-items: stretch;
-  flex-direction: row;
-  flex-wrap: wrap;
-  max-width: 100%;
-  height: 200px;
-}
-ul,
-li {
   color: white;
-  list-style: none;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.Sinopsis {
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-bottom: 15px;
+  font-size: 9px;
+}
+.Sinopsis_title {
+  color: var(--color1);
+  font-size: 34px;
 }
