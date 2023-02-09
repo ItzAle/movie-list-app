@@ -4,6 +4,7 @@ import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
 import { CiTrash, CiStar } from "react-icons/ci";
 import Movies from "../Movies/Movies";
+import axios from "axios";
 
 // const pelisData = [
 //   { id: 1, name: "peli1", img: "algo.jpg" },
@@ -24,9 +25,11 @@ function Catalogue() {
     let newPelis = pelis.filter((item) => item.id !== idToDelete);
     setPelis(newPelis);
   };
+  
 
-  const addToFavorite = () => {
-    productServices.addToFavorite(isFav);
+  const addToFavorite = (id) => {
+    console.log(id)
+    axios.put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + id , { "isFav": true }) 
   };
 
   const removeFavorite = (id) => {
@@ -55,7 +58,7 @@ function Catalogue() {
               className={style.delete}
               onClick={() => deleteById(peli.id)}
             />
-            <CiStar onClick={() => addToFavorite()} />
+            <CiStar onClick= {()=> addToFavorite(peli.id)} />
           </div>
         ))}
       </div>
