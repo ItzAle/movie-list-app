@@ -1,0 +1,7 @@
+.loader {
+  display: grid;
+  padding: 0;
+  margin: auto;
+  justify-content: center;
+  color: white;
+}

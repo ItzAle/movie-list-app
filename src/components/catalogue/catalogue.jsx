@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
-import { CiTrash, CiStar } from "react-icons/ci";
+import { CiTrash, CiStar, CiCircleRemove } from "react-icons/ci";
 import Movies from "../Movies/Movies";
 import axios from "axios";
+import Loader from "../Loader/loader";
 
 // const pelisData = [
 //   { id: 1, name: "peli1", img: "algo.jpg" },
@@ -15,9 +16,13 @@ import axios from "axios";
 function Catalogue() {
   const [pelis, setPelis] = useState([]);
   const [isFav, setIsFav] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    productServices.getAll().then((data) => setPelis(data));
+    productServices.getAll().then((data) => {
+      setPelis(data);
+      setIsLoading(false);
+    });
   }, []);
 
   const deleteById = async (idToDelete) => {
@@ -25,19 +30,22 @@ function Catalogue() {
     let newPelis = pelis.filter((item) => item.id !== idToDelete);
     setPelis(newPelis);
   };
-  
 
   const addToFavorite = (id) => {
-    console.log(id)
-    axios.put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + id , { "isFav": true }) 
+    console.log(id);
+    axios.put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + id, {
+      isFav: true,
+    });
   };
 
   const removeFavorite = (id) => {
     let index = isFav.indexOf(id);
-    console.log(index);
-    let temp = [...isFav.slice(0, index), ...isFav.slice(index + 1)];
-    setIsFav(temp);
+    console.log(id);
+    axios.put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + id, {
+      isFav: false,
+    });
   };
+
   return (
     <div className={style.card}>
       {/* <Movies
@@ -49,6 +57,7 @@ function Catalogue() {
         CiStar={CiStar}
       /> */}
       <div className={style.img}>
+        {isLoading ? <Loader /> : ""}
         {pelis.map((peli) => (
           <div className={style.button_card}>
             <Link to={`movie/${peli.id}`}>
@@ -58,7 +67,8 @@ function Catalogue() {
               className={style.delete}
               onClick={() => deleteById(peli.id)}
             />
-            <CiStar onClick= {()=> addToFavorite(peli.id)} />
+            <CiStar onClick={() => addToFavorite(peli.id)} />
+            <CiCircleRemove onClick={() => removeFavorite(peli.id)} />
           </div>
         ))}
       </div>

@@ -2,15 +2,23 @@ import React, { useEffect, useState } from "react";
 import style from "./MovieDetails.module.css";
 import { useParams } from "react-router-dom";
 import productServices from "../../apiServices/productServices";
+import Loader from "../../components/Loader/loader";
 
 function MovieDetails() {
   let { id } = useParams();
   let [pelis, setPelis] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    productServices.getById(id).then((data) => setPelis(data));
+    productServices.getById(id).then((data) => {
+      setPelis(data);
+      setIsLoading(false);
+    });
   }, []);
+
   return (
     <div className={style.movieDetail}>
+      {isLoading ? <Loader /> : ""}
       <section className={style.details}>
         <img className={style.poster} src={pelis.movieURL} alt="img"></img>
         <img className={style.thumbnail} src={pelis.thumbnail} alt="img" />
@@ -35,6 +43,17 @@ function MovieDetails() {
             src={actorURL}
             alt="Actor"
           />
+        ))}
+        {[
+          pelis.actor1,
+          pelis.actor2,
+          pelis.actor3,
+          pelis.actor4,
+          pelis.actor5,
+        ].map((actor, index) => (
+          <p key={index} className={style.actor} alt="Actor">
+            {actor}
+          </p>
         ))}
       </div>
     </div>

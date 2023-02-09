@@ -32,7 +32,9 @@
 .delete:hover {
   color: var(--color1);
 }
-
+.MuiCircularProgress-root {
+  color: white;
+}
 @media (max-width: 976px) {
   .img {
     list-style: none;
