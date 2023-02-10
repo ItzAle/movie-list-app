@@ -3,7 +3,6 @@ import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
 import { CiTrash, CiStar, CiCircleRemove } from "react-icons/ci";
-import Movies from "../Movies/Movies";
 import axios from "axios";
 import Loader from "../Loader/loader";
 
@@ -20,11 +19,13 @@ function Catalogue() {
 
   useEffect(() => {
     getAlldata();
-    setIsLoading(false);
   }, []);
 
   function getAlldata() {
-    productServices.getAll().then((data) => setPelis(data));
+    productServices.getAll().then((data) => {
+      setPelis(data);
+      setIsLoading(false);
+    });
   }
   const deleteById = async (idToDelete) => {
     await productServices.deleteById(idToDelete);
@@ -43,35 +44,34 @@ function Catalogue() {
 
   return (
     <div className={style.card}>
-      {/* <Movies
-        style={style}
-        pelis={pelis}
-        Link={Link}
-        CiTrash={CiTrash}
-        deleteById={deleteById}
-        CiStar={CiStar}
-      /> */}
       <div className={style.img}>
-        {isLoading ? <Loader /> : ""}
-        {pelis.map((peli) => (
-          <div className={style.button_card}>
-            <Link to={`movie/${peli.id}`}>
-              <img className={style.imgContent} src={peli.movieURL} alt="img" />
-            </Link>
-            <CiTrash
-              className={style.delete}
-              onClick={() => deleteById(peli.id)}
-            />
-            {!peli.isFav ? (
-              <CiStar
-                className={style.add}
-                onClick={() => toogleToFavorite(peli)}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          pelis.map((peli) => (
+            <div className={style.button_card}>
+              <Link to={`movie/${peli.id}`}>
+                <img
+                  className={style.imgContent}
+                  src={peli.movieURL}
+                  alt="img"
+                />
+              </Link>
+              <CiTrash
+                className={style.delete}
+                onClick={() => deleteById(peli.id)}
               />
-            ) : (
-              <CiCircleRemove onClick={() => toogleToFavorite(peli)} />
-            )}
-          </div>
-        ))}
+              {!peli.isFav ? (
+                <CiStar
+                  className={style.add}
+                  onClick={() => toogleToFavorite(peli)}
+                />
+              ) : (
+                <CiCircleRemove onClick={() => toogleToFavorite(peli)} />
+              )}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

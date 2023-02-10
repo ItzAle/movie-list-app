@@ -2,9 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./ActorCard.module.css";
 import productServices from "../../apiServices/productServices";
-function ActorCard(actor, index) {
+import Loader from "../Loader/loader";
+
+function ActorCard() {
   let [pelis, setPelis] = useState({ actores: [] });
   let { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     productServices.getById(id).then((data) => {
@@ -13,10 +16,10 @@ function ActorCard(actor, index) {
       setIsLoading(false);
     });
   }, []);
-  const [isLoading, setIsLoading] = useState(true);
 
   return (
     <div className={style.actorCard}>
+      {isLoading ? <Loader /> : ""}
       {pelis.actores.map((actor, index) => (
         <div className={style.actordiv}>
           <li>

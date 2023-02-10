@@ -63,3 +63,20 @@ span {
   color: var(--color1);
   font-size: 34px;
 }
+
+@media (max-width: 976px) {
+  .thumbnail {
+    display: none;
+  }
+  .title {
+    display: flex;
+    color: white;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: stretch;
+    gap: 4px;
+  }
+  .Sinopsis {
+    display: none;
+  }
+}

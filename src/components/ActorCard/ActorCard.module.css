@@ -14,11 +14,8 @@
 }
 .actorImagen {
   border-radius: 10px;
-  width: 100px;
-  height: 100px;
-}
-
-.actorImagen img {
   width: 100%;
-  height: 200px;
+  height: 140px;
+}
+@media (max-width: 976px) {
 }

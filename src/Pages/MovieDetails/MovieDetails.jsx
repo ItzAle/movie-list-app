@@ -37,9 +37,9 @@ function MovieDetails() {
           <div className={style.Sinopsis}>
             <h1 className={style.Sinopsis_title}>Sinopsis: </h1>
             <h1>{pelis.Sinopsis}</h1>
-            <div className={ActorCard}></div>
-            <ActorCard />
           </div>
+          <div className={ActorCard}></div>
+          <ActorCard />
         </div>
       )}
     </div>
