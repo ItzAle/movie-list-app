@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { CircularProgress } from "@mui/material";
 import style from "./loader.module.css";
 
