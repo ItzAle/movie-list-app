@@ -35,13 +35,10 @@ function Catalogue() {
   };
 
   const toogleToFavorite = (peli) => {
-    console.log(peli);
-    axios
-      .put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + peli.id, {
-        isFav: !peli.isFav,
-      })
-      .then((x) => getAlldata());
-  };
+    productServices.toogleToFavorite (peli.id,{isFav:!peli.isFav})
+    
+       .then((x) => getAlldata())
+   };
 
   return (
     <div className={style.card}>

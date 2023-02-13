@@ -23,6 +23,16 @@ const productServices = {
       .then((res) => res.data)
       .catch((err) => console.log(err));
   },
+  
+  toogleToFavorite(id, changes) {
+    return axios
+      .put(
+        `https://63d919f474f386d4efe496e9.mockapi.io/movies/${id}`,
+        changes
+      )
+      .then((response) => response.data);
+  },
+
 };
 
 export default productServices;
