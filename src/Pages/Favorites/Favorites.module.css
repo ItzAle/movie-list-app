@@ -21,6 +21,43 @@
   filter: brightness(50%);
   filter: hue-rotate(5deg);
 }
+/* //////////Buttons section/////////// */
+.button_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: baseline;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+.add:hover {
+  transition: all 0.2s ease;
+  color: var(--color1);
+}
+.add {
+  transition: all 0.2s ease;
+}
+.favorite {
+  transition: all 0.2s ease;
+  color: var(--color1);
+}
+.favorite:hover {
+  color: white;
+}
+.delete:hover {
+  transition: all 0.2s ease;
+  color: var(--color1);
+}
+.MuiCircularProgress-root {
+  color: white;
+}
+
+/* ///////////////////////////// */
 
 @media (max-width: 976px) {
   .img {

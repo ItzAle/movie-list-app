@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
-import { CiTrash, CiStar, CiCircleRemove } from "react-icons/ci";
+import { IoIosStarOutline, IoIosStar } from "react-icons/io";
+import { CiTrash } from "react-icons/ci";
 import axios from "axios";
 import Loader from "../Loader/loader";
 
@@ -57,18 +58,23 @@ function Catalogue() {
                   alt="img"
                 />
               </Link>
-              <CiTrash
-                className={style.delete}
-                onClick={() => deleteById(peli.id)}
-              />
-              {!peli.isFav ? (
-                <CiStar
-                  className={style.add}
-                  onClick={() => toogleToFavorite(peli)}
+              <div className={style.buttons}>
+                <CiTrash
+                  className={style.delete}
+                  onClick={() => deleteById(peli.id)}
                 />
-              ) : (
-                <CiCircleRemove onClick={() => toogleToFavorite(peli)} />
-              )}
+                {!peli.isFav ? (
+                  <IoIosStarOutline
+                    className={style.add}
+                    onClick={() => toogleToFavorite(peli)}
+                  />
+                ) : (
+                  <IoIosStar
+                    className={style.favorite}
+                    onClick={() => toogleToFavorite(peli)}
+                  />
+                )}
+              </div>
             </div>
           ))
         )}

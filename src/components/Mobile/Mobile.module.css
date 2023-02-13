@@ -16,7 +16,9 @@
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--color3);
+    border-color: var(--color2);
+    border-top: 3px groove #ff6550;
+    background-color: #151627;
     border-radius: 8px 8px 0 0;
   }
 }

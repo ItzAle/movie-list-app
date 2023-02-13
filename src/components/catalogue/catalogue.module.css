@@ -8,9 +8,12 @@
 .img {
   list-style: none;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-items: center;
   gap: 60px;
   padding: 60px;
 }
@@ -22,19 +25,43 @@
   filter: brightness(50%);
   filter: hue-rotate(5deg);
 }
-
+/* //////////Buttons section/////////// */
 .button_card {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: baseline;
 }
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+.add:hover {
+  transition: all 0.2s ease;
+  color: var(--color1);
+}
+.add {
+  transition: all 0.2s ease;
+}
+.favorite {
+  transition: all 0.2s ease;
+  color: var(--color1);
+}
+.favorite:hover {
+  color: white;
+}
 .delete:hover {
+  transition: all 0.2s ease;
   color: var(--color1);
 }
 .MuiCircularProgress-root {
   color: white;
 }
+
+/* ///////////////////////////// */
 @media (max-width: 976px) {
   .img {
     list-style: none;
@@ -54,4 +81,5 @@ button {
   box-sizing: 0px;
   justify-content: center;
   border-color: transparent;
+  padding: 10px;
 }
