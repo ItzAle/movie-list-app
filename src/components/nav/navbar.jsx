@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./navbar.module.css";
 import logo from "../logo.png";
 import "./navbar.module.css";
@@ -26,7 +26,6 @@ function Navbar() {
               <h2>FAVORITOS</h2>
             </Link>
           </div>
-          <input type="text" placeholder="Buscar..." />
         </nav>
       </section>
     </div>

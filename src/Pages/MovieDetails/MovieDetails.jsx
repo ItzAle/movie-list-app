@@ -24,16 +24,36 @@ function MovieDetails() {
         <Loader />
       ) : (
         <div>
-          <section className={style.details}>
-            <img className={style.poster} src={pelis.movieURL} alt="img"></img>
-            <img className={style.thumbnail} src={pelis.thumbnail} alt="img" />
-          </section>
-          <ul className={style.title}>
-            <li className={style.name}>{pelis.movieName} </li>
-            <li>Directed By: {pelis.Director} </li>
-            <li>Año {pelis.movieYear}</li>
-            <li>{pelis.movieTime} Min.</li>
-          </ul>
+          <div className={style.infoCard}>
+            <section className={style.details}>
+              <img
+                className={style.poster}
+                src={pelis.movieURL}
+                alt="img"
+              ></img>
+              <img
+                className={style.thumbnail}
+                src={pelis.thumbnail}
+                alt="img"
+              />
+            </section>
+            <ul className={style.title}>
+              <li className={style.name}>{pelis.movieName} </li>
+              <li>
+                {" "}
+                <span> Directed By:</span> {pelis.Director}{" "}
+              </li>
+              <li>
+                {" "}
+                <span> Año: </span>
+                {pelis.movieYear}
+              </li>
+              <li>
+                {" "}
+                {pelis.movieTime} <span>Min.</span>
+              </li>
+            </ul>
+          </div>
           <div className={style.Sinopsis}>
             <h1 className={style.Sinopsis_title}>Sinopsis: </h1>
             <h1>{pelis.Sinopsis}</h1>

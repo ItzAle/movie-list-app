@@ -20,8 +20,7 @@ span {
 
 .details {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-content: space-around;
   align-items: center;
 }
@@ -44,13 +43,7 @@ span {
   font-weight: 600;
 }
 .title {
-  display: flex;
   color: white;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: flex-start;
-  align-items: flex-start;
-  gap: 4px;
 }
 
 .Sinopsis {
@@ -65,16 +58,22 @@ span {
 }
 
 @media (max-width: 976px) {
+  .infoCard {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
   .thumbnail {
     display: none;
   }
   .title {
     display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
     color: white;
-    flex-wrap: wrap;
-    align-content: space-around;
-    align-items: stretch;
-    gap: 4px;
   }
   .Sinopsis {
     display: none;

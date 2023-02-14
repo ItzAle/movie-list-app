@@ -8,10 +8,14 @@
 .img {
   list-style: none;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-items: center;
   gap: 60px;
-  padding: 40px;
+  padding: 60px;
 }
 
 .imgContent:hover {
@@ -58,6 +62,10 @@
 }
 
 /* ///////////////////////////// */
+.infoCard {
+  display: flex;
+  background-color: red;
+}
 
 @media (max-width: 976px) {
   .img {
