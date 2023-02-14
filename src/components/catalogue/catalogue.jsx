@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
-import { Await, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 import { FaPen } from "react-icons/fa";
 import { CiTrash } from "react-icons/ci";
-import axios from "axios";
 import Loader from "../Loader/loader";
 
 // const pelisData = [
@@ -16,7 +15,6 @@ import Loader from "../Loader/loader";
 
 function Catalogue() {
   const [pelis, setPelis] = useState([]);
-  const [isFav, setIsFav] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [search, setSearch] = useState("");
 
@@ -62,10 +60,10 @@ function Catalogue() {
             <Loader />
           ) : (
             pelis
-              .filter((pelis) => {
-                return search.toLowerCase() === ""
-                  ? pelis
-                  : pelis.movieName.toLowerCase().includes(search);
+              .filter((peli) => {
+                // expresion regular que "convierte" la mayusculas en minusculas (validaciond de inputs)
+                const regex = new RegExp(search, "i");
+                return regex.test(peli.movieName);
               })
               .map((peli) => (
                 <div className={style.button_card}>

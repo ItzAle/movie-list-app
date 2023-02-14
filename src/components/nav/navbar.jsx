@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./navbar.module.css";
 import logo from "../logo.png";
 import "./navbar.module.css";
