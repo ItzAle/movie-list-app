@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import productServices from "../../apiServices/productServices";
 import style from "./FormPage.module.css";
 
@@ -24,7 +24,16 @@ const FormPage = () => {
   const [newMovie, setNewMovie] = useState(initMovie);
   const navigator = useNavigate();
 
+
+  let  { id } = useParams(id);
+   const editById = (e) => { 
+    productServices.editById (id) 
+    console.log(productServices)
+
+   }
+
   const handleOnChange = (e) => {
+
     const name = e.target.name;
     const value = e.target.value;
     const temp = (newMovie[name] = value);

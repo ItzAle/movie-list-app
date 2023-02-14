@@ -29,10 +29,6 @@ function Catalogue() {
     });
   }
 
-  const editById = async (idToEdit) => {
-    productServices.editById(idToEdit);
-  };
-
   const deleteById = async (idToDelete) => {
     await productServices.deleteById(idToDelete);
     let newPelis = pelis.filter((item) => item.id !== idToDelete);
@@ -90,10 +86,10 @@ function Catalogue() {
                         onClick={() => toogleToFavorite(peli)}
                       />
                     )}
+                    <Link to={`movie/edit/${peli.id}`}>
                     <FaPen
                       className={style.edit}
-                      onClick={() => editById(peli.id)}
-                    />
+                    /></Link>
                   </div>
                 </div>
               ))
