@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
-import { Link } from "react-router-dom";
-import { IoIosStarOutline, IoIosStar } from "react-icons/io";
+import { Await, Link } from "react-router-dom";
+import { IoIosStarOutline, IoIosStar , } from "react-icons/io";
+import { FaPen} from "react-icons/fa";
 import { CiTrash } from "react-icons/ci";
 import axios from "axios";
 import Loader from "../Loader/loader";
@@ -28,17 +29,26 @@ function Catalogue() {
       setIsLoading(false);
     });
   }
+
+  const editById = async (idToEdit) => {
+     productServices.editById(idToEdit) 
+
+  }
+
+
   const deleteById = async (idToDelete) => {
     await productServices.deleteById(idToDelete);
     let newPelis = pelis.filter((item) => item.id !== idToDelete);
     setPelis(newPelis);
   };
-
+ 
   const toogleToFavorite = (peli) => {
     productServices.toogleToFavorite (peli.id,{isFav:!peli.isFav})
     
        .then((x) => getAlldata())
    };
+
+  
 
   return (
     <div className={style.card}>
@@ -71,6 +81,11 @@ function Catalogue() {
                     onClick={() => toogleToFavorite(peli)}
                   />
                 )}
+                 <FaPen
+                  className={style.edit}
+                  onClick={() => editById(peli.id)}
+                />
+                
               </div>
             </div>
           ))
