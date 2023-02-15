@@ -20,8 +20,15 @@ function Favorites() {
     });
   }, []);
 
-  function getAlldata() {
-    productServices.getAll().then((data) => {
+  // function getAlldata() {
+  //   productServices.getAll().then((data) => {
+  //     setPelis(data);
+  //     setIsLoading(false);
+  //   });
+  // }
+
+  function getAllfavorites() {
+    favoriteServices.getAll().then((data) => {
       setPelis(data);
       setIsLoading(false);
     });
@@ -38,7 +45,7 @@ function Favorites() {
       .put("https://63d919f474f386d4efe496e9.mockapi.io/movies/" + peli.id, {
         isFav: !peli.isFav,
       })
-      .then((x) => getAlldata());
+      .then((x) => getAllfavorites());
   };
 
   return (
@@ -67,12 +74,10 @@ function Favorites() {
                     onClick={() => toogleToFavorite(peli)}
                   />
                 ) : (
-                  <Link to={"/"}>
-                    <IoIosStar
-                      className={style.favorite}
-                      onClick={() => toogleToFavorite(peli)}
-                    />
-                  </Link>
+                  <IoIosStar
+                    className={style.favorite}
+                    onClick={() => toogleToFavorite(peli)}
+                  />
                 )}
               </div>
             </div>
