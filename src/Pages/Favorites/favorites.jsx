@@ -10,7 +10,6 @@ import axios from "axios";
 
 function Favorites() {
   const [pelis, setPelis] = useState([]);
-  const [isFav, setIsFav] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

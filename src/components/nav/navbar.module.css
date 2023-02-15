@@ -17,21 +17,6 @@ nav {
   border-bottom: 3px groove #ff6550;
   border-radius: 0 0 8px 8px;
 }
-
-input::placeholder {
-  text-align: center;
-}
-
-input {
-  max-width: 250px;
-  height: 30px;
-  background-color: var(--color2);
-  border-style: groove;
-  border-radius: 20px;
-  color: white;
-  transition: all 0.4s ease;
-}
-
 .logo {
   display: block;
   max-width: 100%;

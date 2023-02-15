@@ -45,12 +45,14 @@ function Catalogue() {
   return (
     <div>
       {" "}
-      <input
-        className={style.input}
-        onChange={(e) => setSearch(e.target.value)}
-        type="text"
-        placeholder="Buscar..."
-      />
+      <div className={style.inputContainer}>
+        <input
+          className={style.input}
+          onChange={(e) => setSearch(e.target.value)}
+          type="text"
+          placeholder="Buscar..."
+        />
+      </div>
       <div className={style.card}>
         <div className={style.img}>
           {isLoading ? (
