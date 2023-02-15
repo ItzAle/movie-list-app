@@ -2,12 +2,20 @@
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: nowrap;
   flex-direction: row;
-  background-color: var(--color2);
+  border-color: var(--color2);
   color: var(--color1);
+  padding: 0 100px 0 100px;
   gap: 50px;
+  position: sticky;
+  top: 10px;
+}
+
+nav {
+  border-bottom: 3px groove #ff6550;
+  border-radius: 0 0 8px 8px;
 }
 
 input::placeholder {
@@ -15,7 +23,8 @@ input::placeholder {
 }
 
 input {
-  max-width: 100px;
+  max-width: 250px;
+  height: 30px;
   background-color: var(--color2);
   border-style: groove;
   border-radius: 20px;

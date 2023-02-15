@@ -5,6 +5,10 @@
   border-radius: 20px;
 }
 
+.input {
+  padding: 10px;
+}
+
 .img {
   list-style: none;
   color: white;

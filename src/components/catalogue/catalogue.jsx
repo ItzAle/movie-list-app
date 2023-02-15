@@ -46,6 +46,7 @@ function Catalogue() {
     <div>
       {" "}
       <input
+        className={style.input}
         onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Buscar..."
@@ -87,9 +88,8 @@ function Catalogue() {
                       />
                     )}
                     <Link to={`movie/edit/${peli.id}`}>
-                    <FaPen
-                      className={style.edit}
-                    /></Link>
+                      <FaPen className={style.edit} />
+                    </Link>
                   </div>
                 </div>
               ))
