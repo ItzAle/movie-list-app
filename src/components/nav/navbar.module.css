@@ -64,6 +64,7 @@ h2:hover::after {
 }
 
 @media (max-width: 976px) {
+  .logo,
   .nav {
     display: none;
   }

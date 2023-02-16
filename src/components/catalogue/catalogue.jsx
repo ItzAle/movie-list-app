@@ -3,7 +3,7 @@ import productServices from "../../apiServices/productServices";
 import style from "./catalogue.module.css";
 import { Link } from "react-router-dom";
 import { IoIosStarOutline, IoIosStar } from "react-icons/io";
-import { FaPen } from "react-icons/fa";
+import { IoMdCreate } from "react-icons/io";
 import { CiTrash } from "react-icons/ci";
 import Loader from "../Loader/loader";
 
@@ -44,58 +44,57 @@ function Catalogue() {
 
   return (
     <div>
-      {" "}
-      <div className={style.inputContainer}>
-        <input
-          className={style.input}
-          onChange={(e) => setSearch(e.target.value)}
-          type="text"
-          placeholder="Buscar..."
-        />
-      </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <div className={style.inputContainer}>
+          <input
+            className={style.input}
+            onChange={(e) => setSearch(e.target.value)}
+            type="text"
+            placeholder="Buscar..."
+          />
+        </div>
+      )}
       <div className={style.card}>
         <div className={style.img}>
-          {isLoading ? (
-            <Loader />
-          ) : (
-            pelis
-              .filter((peli) => {
-                // expresion regular que "convierte" la mayusculas en minusculas (validaciond de inputs)
-                const regex = new RegExp(search, "i");
-                return regex.test(peli.movieName);
-              })
-              .map((peli) => (
-                <div className={style.button_card}>
-                  <Link to={`movie/${peli.id}`}>
-                    <img
-                      className={style.imgContent}
-                      src={peli.movieURL}
-                      alt="img"
+          {pelis
+            .filter((peli) => {
+              // expresion regular que "convierte" la mayusculas en minusculas (validaciond de inputs)
+              const regex = new RegExp(search, "i");
+              return regex.test(peli.movieName);
+            })
+            .map((pelis) => (
+              <div className={style.button_card}>
+                <Link to={`movie/${pelis.id}`}>
+                  <img
+                    className={style.imgContent}
+                    src={pelis.movieURL}
+                    alt="img"
+                  />
+                </Link>
+                <div className={style.buttons}>
+                  <CiTrash
+                    className={style.delete}
+                    onClick={() => deleteById(pelis.id)}
+                  />
+                  {!pelis.isFav ? (
+                    <IoIosStarOutline
+                      className={style.add}
+                      onClick={() => toogleToFavorite(pelis)}
                     />
+                  ) : (
+                    <IoIosStar
+                      className={style.favorite}
+                      onClick={() => toogleToFavorite(pelis)}
+                    />
+                  )}
+                  <Link to={`movie/edit/${pelis.id}`}>
+                    <IoMdCreate className={style.edit} />
                   </Link>
-                  <div className={style.buttons}>
-                    <CiTrash
-                      className={style.delete}
-                      onClick={() => deleteById(peli.id)}
-                    />
-                    {!peli.isFav ? (
-                      <IoIosStarOutline
-                        className={style.add}
-                        onClick={() => toogleToFavorite(peli)}
-                      />
-                    ) : (
-                      <IoIosStar
-                        className={style.favorite}
-                        onClick={() => toogleToFavorite(peli)}
-                      />
-                    )}
-                    <Link to={`movie/edit/${peli.id}`}>
-                      <FaPen className={style.edit} />
-                    </Link>
-                  </div>
                 </div>
-              ))
-          )}
+              </div>
+            ))}
         </div>
       </div>
     </div>

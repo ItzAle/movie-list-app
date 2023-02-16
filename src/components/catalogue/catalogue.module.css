@@ -58,7 +58,8 @@ input {
 .buttons,
 .add,
 .favorite,
-.delete {
+.delete,
+.edit {
   cursor: pointer;
 }
 .buttons {
@@ -67,39 +68,31 @@ input {
   font-size: 20px;
   transition: all 0.2s ease;
 }
-.add:hover {
-  transition: all 0.2s ease;
+.add:hover,
+.edit:hover,
+.delete:hover {
+  transition: all 0.4s ease;
   color: var(--color1);
 }
-.add {
-  transition: all 0.2s ease;
+.add,
+.delete,
+.edit {
+  transition: all 0.4s ease;
 }
 .favorite {
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
   color: var(--color1);
 }
 .favorite:hover {
   color: white;
 }
-.delete:hover {
-  transition: all 0.2s ease;
-  color: var(--color1);
-}
 .MuiCircularProgress-root {
   color: white;
 }
-
-/* ///////////////////////////// */
-@media (max-width: 976px) {
-  .img {
-    list-style: none;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px;
-    justify-content: space-around;
-  }
+.edit {
+  color: white;
 }
+/* ///////////////////// */
 
 button {
   color: rgb(255, 251, 251);
@@ -110,4 +103,24 @@ button {
   justify-content: center;
   border-color: transparent;
   padding: 10px;
+}
+/* ///////////////////////////// */
+@media (max-width: 976px) {
+  .img {
+    list-style: none;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    justify-content: space-around;
+  }
+  .input {
+    max-width: 200px;
+    width: 200px;
+    height: 30px;
+    background-color: var(--color2);
+    border-radius: 11px;
+    color: white;
+    transition: all 0.4s ease;
+  }
 }
