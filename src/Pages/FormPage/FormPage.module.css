@@ -19,6 +19,7 @@
   max-width: 100%;
   width: 250px;
   height: 40px;
+  background-color: var(--color2);
 }
 .input::placeholder {
   text-align: center;

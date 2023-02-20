@@ -1,7 +1,9 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import productServices from "../../apiServices/productServices";
 import style from "./FormPage.module.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initMovie = {
   movieName: "Titulo de la pelicula",
@@ -23,7 +25,8 @@ const initMovie = {
 const FormPage = () => {
   const [newMovie, setNewMovie] = useState(initMovie);
   const navigator = useNavigate();
-  let  { id } = useParams();
+  const [isEditMode, setIsEditMode] = useState(false);
+  let { id } = useParams();
 
   useEffect(() => {
     productServices.editById(id).then((data) => {
@@ -33,7 +36,6 @@ const FormPage = () => {
   });
 
   const handleOnChange = (e) => {
-
     const name = e.target.name;
     const value = e.target.value;
     const temp = (newMovie[name] = value);
@@ -45,8 +47,10 @@ const FormPage = () => {
     await productServices.create(newMovie);
     navigator("/");
   };
+
   return (
     <div>
+      <ToastContainer />
       <form className={style.container} onSubmit={handleSubmit}>
         <div className={style.imageContainer}>
           <img src={newMovie.movieURL} alt="img" />
@@ -104,8 +108,8 @@ const FormPage = () => {
             name="thumbnail"
             placeholder="URL Miniatura"
           ></textarea>
-          <button type="submit">Añadir</button>
         </section>
+        <button type="submit">Añadir</button>
       </form>
     </div>
   );

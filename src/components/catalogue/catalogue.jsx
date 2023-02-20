@@ -6,6 +6,8 @@ import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 import { IoMdCreate } from "react-icons/io";
 import { CiTrash } from "react-icons/ci";
 import Loader from "../Loader/loader";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // const pelisData = [
 //   { id: 1, name: "peli1", img: "algo.jpg" },
@@ -41,9 +43,43 @@ function Catalogue() {
 
       .then((x) => getAlldata());
   };
+  const addFavorite = () =>
+    toast("✅ Añadido a favoritos", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  const deleteFavorite = () =>
+    toast("❌ Eliminado de favoritos", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  const deleteMovie = () =>
+    toast("❌ Pelicula eliminada", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
 
   return (
     <div>
+      <ToastContainer />
       {isLoading ? (
         <Loader />
       ) : (
@@ -77,16 +113,19 @@ function Catalogue() {
                   <CiTrash
                     className={style.delete}
                     onClick={() => deleteById(pelis.id)}
+                    onClickCapture={deleteMovie}
                   />
                   {!pelis.isFav ? (
                     <IoIosStarOutline
                       className={style.add}
                       onClick={() => toogleToFavorite(pelis)}
+                      onClickCapture={addFavorite}
                     />
                   ) : (
                     <IoIosStar
                       className={style.favorite}
                       onClick={() => toogleToFavorite(pelis)}
+                      onClickCapture={deleteFavorite}
                     />
                   )}
                   <Link to={`movie/edit/${pelis.id}`}>
