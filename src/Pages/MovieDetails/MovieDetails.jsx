@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import productServices from "../../apiServices/productServices";
 import Loader from "../../components/Loader/loader";
 import ActorCard from "../../components/ActorCard/ActorCard";
+import { IoIosStarOutline, IoIosStar } from "react-icons/io";
 
 function MovieDetails() {
   let { id } = useParams();
@@ -40,11 +41,21 @@ function MovieDetails() {
             <ul className={style.title}>
               <li className={style.name}>{pelis.movieName} </li>
               <li>
+                {pelis.isFav ? (
+                  <li>
+                    Añadida a favoritos <IoIosStar className={style.add} />
+                  </li>
+                ) : (
+                  <li>
+                    No añadida a favoritos <IoIosStarOutline />
+                  </li>
+                )}
+              </li>
+              <li>
                 {" "}
                 <span> Directed By:</span> {pelis.Director}{" "}
               </li>
               <li>
-                {" "}
                 <span> Año: </span>
                 {pelis.movieYear}
               </li>

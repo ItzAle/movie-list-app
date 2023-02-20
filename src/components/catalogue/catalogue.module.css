@@ -105,6 +105,20 @@ button {
   padding: 10px;
 }
 /* ///////////////////////////// */
+@media (min-width: 1120px) {
+  .img {
+    list-style: none;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+    padding: 60px;
+    transition: all 0.2s ease;
+  }
+}
 @media (max-width: 976px) {
   .img {
     list-style: none;

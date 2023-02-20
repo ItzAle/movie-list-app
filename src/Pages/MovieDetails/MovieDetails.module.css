@@ -43,6 +43,11 @@ span {
   font-weight: 600;
 }
 .title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding-left: 285px;
   color: white;
 }
 
@@ -56,6 +61,10 @@ span {
   color: var(--color1);
   font-size: 34px;
 }
+.add {
+  text-align: center;
+  color: var(--color1);
+}
 
 @media (max-width: 976px) {
   .infoCard {
@@ -68,14 +77,15 @@ span {
     display: none;
   }
   .title {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-    justify-content: flex-start;
-    align-items: flex-start;
+    padding: 0;
+    display: grid;
     color: white;
   }
   .Sinopsis {
-    display: none;
+    display: flex;
+    padding: 0;
+    padding-bottom: 100px;
+    margin: 0;
+    flex-direction: column;
   }
 }
