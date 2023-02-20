@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import productServices from "../../apiServices/productServices";
 import style from "./FormPage.module.css";
@@ -23,14 +23,14 @@ const initMovie = {
 const FormPage = () => {
   const [newMovie, setNewMovie] = useState(initMovie);
   const navigator = useNavigate();
+  let  { id } = useParams();
 
-
-  let  { id } = useParams(id);
-   const editById = (e) => { 
-    productServices.editById (id) 
-    console.log(productServices)
-
-   }
+  useEffect(() => {
+    productServices.editById(id).then((data) => {
+      setNewMovie(data);
+      console.log(data);
+    });
+  });
 
   const handleOnChange = (e) => {
 
