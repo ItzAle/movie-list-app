@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# [DEMO](https://shopping-list-pied.vercel.app/) 
+# [DEMO](https://movie-list-app-theta.vercel.app/) 
 ## 💼 Brifing
 
 *`Un equipo backend de una empresa relacionada con el mundo audiovisual, nos pide que desarrollemos un frontend para que sus clientes puedan gestionar su catálogo de películas.`:*
