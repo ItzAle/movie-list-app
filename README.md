@@ -1,4 +1,4 @@
-# 🛍️ Shopping List In React ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+# 🎥 Movie App In React ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
